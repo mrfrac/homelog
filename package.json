@@ -7,6 +7,7 @@
     "@types/node": "12.0.1",
     "@types/react": "16.8.17",
     "@types/react-dom": "16.8.4",
+    "express": "^4.16.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
@@ -16,7 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "express:watch": "nodemon"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,5 +34,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "nodemon": "^1.19.0",
+    "ts-node": "^8.1.0"
   }
 }
