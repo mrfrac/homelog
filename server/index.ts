@@ -11,7 +11,7 @@ app.listen(port, () => {
     port,
     app.get("env")
   );
-  console.log("  Press CTRL-C to stop\n");
+  console.log("  Press CTRL-C to abort\n");
 });
 
 for (const route of routes) {
