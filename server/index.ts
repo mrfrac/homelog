@@ -14,11 +14,24 @@ app.listen(port, () => {
   console.log("  Press CTRL-C to abort\n");
 });
 
-for (const route of routes) {
-  app[route.method](route.route, (req: express.Request, res: express.Response, next: () => void) => {
-    const controller = new route.controller();
-    const result = controller[route.action](req, res, next);
+app.use(express.logger('dev'));
 
-    return result;
+
+// todo сделать корневым путем /api
+// todo добавить статичный путь до собранного дистриба, за одно скрипт на запуск express
+// todo добавить логирование запрошенного пути
+for (const route of routes) {
+  app[route.method](route.route, async (req: express.Request, res: express.Response, next: () => void) => {
+    const controller = new route.controller();
+
+    try {
+      const result = await controller[route.action](req, res, next);
+      // todo: Дбобавить проверку типов, обработку ошибок
+      return res.status(200).json(result);
+    } catch (e) {
+      return res.status(500).json({
+        error: e.toString()
+      });
+    }
   });
 }

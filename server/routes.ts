@@ -1,4 +1,4 @@
-import { IndexController } from "./controllers/IndexController";
+import { TankController } from "./controllers/TankController";
 
 interface IRoute<T> {
   controller: {new (): T};
@@ -8,8 +8,8 @@ interface IRoute<T> {
 };
 
 export default [{
-  controller: IndexController,
-  action: "index",
+  controller: TankController,
+  action: "get",
   method: "get",
   route: "/"
 }] as IRoute<any>[];
