@@ -9,7 +9,7 @@ interface IRoute<T> {
 
 export default [{
   controller: TankController,
-  action: "get",
+  action: "listAll",
   method: "get",
-  path: "/"
+  path: "/tank"
 }] as IRoute<any>[];
