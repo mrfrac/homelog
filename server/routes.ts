@@ -4,12 +4,12 @@ interface IRoute<T> {
   controller: {new (): T};
   action: keyof T;
   method: "get" | "post";
-  route: string;
-};
+  path: string;
+}
 
 export default [{
   controller: TankController,
   action: "get",
   method: "get",
-  route: "/"
+  path: "/"
 }] as IRoute<any>[];

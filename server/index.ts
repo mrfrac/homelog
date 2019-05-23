@@ -23,7 +23,7 @@ app.listen(port, () => {
 
 console.log("\nAPI Routes:".blue);
 for (const route of routes) {
-  const apiPath = `/api/${route.route.replace(/^\/+/g, "")}`;
+  const apiPath = `/api/${route.path.replace(/^\/+/g, "")}`;
   console.log(`  ${route.method}: ${apiPath} => ${route.controller.name}.${route.action.toString()}`.green);
   app[route.method](apiPath, async (req: express.Request, res: express.Response, next: () => void) => {
     const controller = new route.controller();
