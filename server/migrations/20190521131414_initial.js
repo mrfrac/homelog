@@ -4,11 +4,17 @@ exports.up = function (knex, Promise) {
       table.increments("id");
       table.decimal("volume").notNullable();
       table.string("session").notNullable();
+      table.timestamp("created_at", {
+        useTz: true
+      }).defaultTo(knex.fn.now());
     })
     .createTable("equipment", table => {
       table.increments("id");
       table.string("name").notNullable();
       table.string("description").notNullable();
+      table.timestamp("created_at", {
+        useTz: true
+      }).defaultTo(knex.fn.now());
     })
     .createTable("service", table => {
       table.increments("id");
@@ -17,7 +23,7 @@ exports.up = function (knex, Promise) {
       table.string("description").notNullable();
       table.timestamp("created_at", {
         useTz: true
-      });
+      }).defaultTo(knex.fn.now());
     });
 };
 
