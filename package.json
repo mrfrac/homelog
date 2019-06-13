@@ -18,6 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "express:watch": "nodemon",
     "migrate:latest": "cd ./server && knex migrate:latest",
     "migrate:make": "cd ./server && knex migrate:make"

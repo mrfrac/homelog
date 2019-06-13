@@ -2,7 +2,8 @@ language: node_js
 node_js:
   - "12.4.0"
 
-jobs:
-  include:
-  - stage: Produce coverage
-    script: yarn run build && jest --coverage --coverageReporters=text-lcov | coveralls
+script:
+  - yarn test -- --coverage # Include coverage when running tests
+  - yarn build
+after_script: # Upload coverage reports 
+  - yarn coveralls
