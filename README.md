@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.org/mrfrac/homelog.svg?branch=master)](https://travis-ci.org/mrfrac/homelog)
+[![Coverage Status](https://coveralls.io/repos/github/mrfrac/homelog/badge.svg?branch=master)](https://coveralls.io/github/mrfrac/homelog?branch=master)
+[![dependencies Status](https://david-dm.org/mrfrac/homelog/status.svg)](https://david-dm.org/mrfrac/homelog)
+[![devDependencies Status](https://david-dm.org/mrfrac/homelog/dev-status.svg)](https://david-dm.org/mrfrac/homelog?type=dev)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
